@@ -76,7 +76,8 @@ while run:
             if ang == 2:
                 ball_vel_y, ball_vel_x = 0.3, 0.6
 
-        # ball_vel_x *= -1
+        if ball_x >= Width - radius:
+            ball_vel_x *= -1
         # ball_vel_y *= -1
         ball_x, ball_y = Width/2-radius, Height/2 - radius
 
