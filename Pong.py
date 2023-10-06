@@ -1,4 +1,5 @@
 import pygame
+import random
 
 pygame.init()
 
@@ -7,6 +8,8 @@ Width, Height = 1000, 600
 wn = pygame.display.set_mode((Width, Height))
 pygame.display.set_caption("Pong_But_Better")  # The window game
 run = True
+direction = [0, 1]
+angle = [0, 1, 2]
 
 # colors
 BLUE = (0, 0, 255)
