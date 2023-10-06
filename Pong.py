@@ -58,14 +58,6 @@ while run:
         ball_vel_y *= -1
         ball_x, ball_y = Width/2-radius, Height/2 - radius
 
-    # update ball position
-    ball_x += ball_vel_x
-    ball_y += ball_vel_y
-
-    # update paddle position
-    right_paddle_y += right_paddle_vel
-    left_paddle_y += left_paddle_vel
-
     # paddle's movement controls
     if right_paddle_y >= Height - paddle_height:
         right_paddle_y = Height - paddle_height
@@ -78,6 +70,20 @@ while run:
 
     if left_paddle_y <= 0:
         left_paddle_y = 0
+
+    # paddle collisions
+    if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
+        if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
+            ball_x = left_paddle_vel + paddle_width
+            ball_vel_x *= -1
+
+    # update ball position
+    ball_x += ball_vel_x
+    ball_y += ball_vel_y
+
+    # update paddle position
+    right_paddle_y += right_paddle_vel
+    left_paddle_y += left_paddle_vel
 
     pygame.draw.circle(wn, BLUE, (ball_x, ball_y), radius)
 
