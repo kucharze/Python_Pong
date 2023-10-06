@@ -39,6 +39,10 @@ while run:
                 right_paddle_vel = -0.9
             if i.key == pygame.K_DOWN:
                 right_paddle_vel = 0.9
+            if i.key == pygame.K_w:
+                left_paddle_vel = -0.9
+            if i.key == pygame.K_s:
+                left_paddle_vel = 0.9
 
     # print("Circle")
 
