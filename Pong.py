@@ -62,19 +62,19 @@ while run:
         # randomize ball direction
         if dir == 0:
             if ang == 0:
-                ball_vel_y, ball_vel_x = -0.6, 0.3
+                ball_vel_y, ball_vel_x = -0.5, 0.2
             if ang == 1:
-                ball_vel_y, ball_vel_x = -0.6, 0.3
+                ball_vel_y, ball_vel_x = -0.5, 0.2
             if ang == 2:
-                ball_vel_y, ball_vel_x = -0.3, 10.6
+                ball_vel_y, ball_vel_x = -0.2, 0.5
 
         if dir == 1:
             if ang == 0:
-                ball_vel_y, ball_vel_x = 0.6, 0.3
+                ball_vel_y, ball_vel_x = 0.5, 0.2
             if ang == 1:
-                ball_vel_y, ball_vel_x = 0.6, 0.3
+                ball_vel_y, ball_vel_x = 0.5, 0.2
             if ang == 2:
-                ball_vel_y, ball_vel_x = 0.3, 0.6
+                ball_vel_y, ball_vel_x = 0.2, 0.5
 
         if ball_x >= Width - radius:
             ball_vel_x *= -1
