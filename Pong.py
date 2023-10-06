@@ -42,14 +42,22 @@ while run:
         if i.type == pygame.QUIT:
             run = False
         elif i.type == pygame.KEYDOWN:
+            # right player
             if i.key == pygame.K_UP:
                 right_paddle_vel = -0.6
             if i.key == pygame.K_DOWN:
                 right_paddle_vel = 0.6
+            if i.key == pygame.K_RIGHT and right_gadget_remaining > 0:
+                right_gadget = 1
+
+            # left player
             if i.key == pygame.K_w:
                 left_paddle_vel = -0.6
             if i.key == pygame.K_s:
                 left_paddle_vel = 0.6
+            if i.key == pygame.K_d and left_gadget_remaining > 0:
+                left_gadget = 1
+
         if i.type == pygame.KEYUP:
             right_paddle_vel = 0
             left_paddle_vel = 0
