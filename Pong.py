@@ -16,6 +16,10 @@ BLUE = (0, 0, 255)
 RED = (255, 0, 0)
 BLACK = (0, 0, 0)
 
+# gadgets
+left_gadget = right_gadget = 0
+left_gadget_remaining = right_gadget_remaining = 5
+
 # ball
 radius = 15
 # Helps keep the ball at the exact center
