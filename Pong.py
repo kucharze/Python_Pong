@@ -43,6 +43,9 @@ while run:
                 left_paddle_vel = -0.9
             if i.key == pygame.K_s:
                 left_paddle_vel = 0.9
+        if i.type == pygame.KEYUP:
+            right_paddle_vel = 0
+            left_paddle_vel = 0
 
     # print("Circle")
 
@@ -58,6 +61,10 @@ while run:
     # update ball position
     ball_x += ball_vel_x
     ball_y += ball_vel_y
+
+    # update paddle position
+    right_paddle_y += right_paddle_vel
+    left_paddle_y += left_paddle_vel
 
     pygame.draw.circle(wn, BLUE, (ball_x, ball_y), radius)
 
