@@ -36,13 +36,13 @@ while run:
             run = False
         elif i.type == pygame.KEYDOWN:
             if i.key == pygame.K_UP:
-                right_paddle_vel = -0.9
+                right_paddle_vel = -0.7
             if i.key == pygame.K_DOWN:
-                right_paddle_vel = 0.9
+                right_paddle_vel = 0.7
             if i.key == pygame.K_w:
-                left_paddle_vel = -0.9
+                left_paddle_vel = -0.7
             if i.key == pygame.K_s:
-                left_paddle_vel = 0.9
+                left_paddle_vel = 0.7
         if i.type == pygame.KEYUP:
             right_paddle_vel = 0
             left_paddle_vel = 0
