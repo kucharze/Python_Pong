@@ -1,3 +1,3 @@
-### Pong game in Python with pygame
+# Pong game in Python with pygame
 
-## Based off of code along on Youtube
+### Based off of code along on Youtube
