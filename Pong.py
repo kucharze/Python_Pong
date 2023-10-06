@@ -107,15 +107,35 @@ while run:
         left_paddle_y = 0
 
     # paddle collisions
+    # left paddle
     if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
         if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
             ball_x = left_paddle_x + paddle_width
             ball_vel_x *= -1
 
+    # right paddle
     if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
         if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
             ball_x = right_paddle_x
             ball_vel_x *= -1
+
+    # gadgets in action
+        # left paddle
+    if left_gadget == 1:
+        if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
+            if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
+                ball_x = left_paddle_x + paddle_width
+                ball_vel_x *= -3.5
+                left_gadget = 0
+                left_gadget_remaining -= 1
+
+    if right_gadget == 1:
+        if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
+            if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
+                ball_x = right_paddle_x
+                ball_vel_x *= -3.5
+                right_gadget = 0
+                right_gadget_remaining -= 1
 
     # update ball position
     ball_x += ball_vel_x
