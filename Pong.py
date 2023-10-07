@@ -157,6 +157,13 @@ while run:
     pygame.draw.rect(wn, RED, pygame.Rect(
         right_paddle_x, right_paddle_y, paddle_width, paddle_height))
 
+    if left_gadget == 1:
+        pygame.draw.circle(wn, WHITE, (left_paddle_x+10, left_paddle_y+10), 4)
+
+    if right_gadget == 1:
+        pygame.draw.circle(
+            wn, WHITE, (right_paddle_x+10, right_paddle_y+10), 4)
+
     # Update the display window
     pygame.display.update()
 
