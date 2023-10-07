@@ -145,11 +145,15 @@ while run:
     right_paddle_y += right_paddle_vel
     left_paddle_y += left_paddle_vel
 
+    # objects
+    # ball
     pygame.draw.circle(wn, BLUE, (ball_x, ball_y), radius)
 
+    # left_paddle
     pygame.draw.rect(wn, RED, pygame.Rect(
         left_paddle_x, left_paddle_y, paddle_width, paddle_height))
 
+    # right_paddle
     pygame.draw.rect(wn, RED, pygame.Rect(
         right_paddle_x, right_paddle_y, paddle_width, paddle_height))
 
