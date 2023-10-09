@@ -153,49 +153,39 @@ while run:
 
     # gadgets in action
     # left paddle
-    if left_gadget == 1:
-        if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
-            if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
-                ball_x = left_paddle_x + paddle_width
-                ball_vel_x *= -3.5
-                dummy_ball_vel_x *= -3.5
-                left_gadget = 0
-                left_gadget_remaining -= 1
-
-    if right_gadget == 1:
-        if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
-            if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
-                ball_x = right_paddle_x
-                ball_vel_x *= -3.5
-                dummy_ball_vel_x *= -3.5
-                right_gadget = 0
-                right_gadget_remaining -= 1
-
-    # Gadgets
     if gadget_pair == 1:
         if left_gadget == 1:
-            pygame.draw.circle(
-                wn, WHITE, (left_paddle_x+10, left_paddle_y+10), 4)
-
+            if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
+                if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
+                    ball_x = left_paddle_x + paddle_width
+                    ball_vel_x *= -3.5
+                    dummy_ball_vel_x *= -3.5
+                    left_gadget = 0
+                    left_gadget_remaining -= 1
         elif left_gadget == 2:
             left_paddle_y = ball_y
             left_gadget = 0
             left_gadget_remaining -= 1
 
         if right_gadget == 1:
-            pygame.draw.circle(
-                wn, WHITE, (right_paddle_x+10, right_paddle_y+10), 4)
-
+            if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
+                if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
+                    ball_x = right_paddle_x
+                    ball_vel_x *= -3.5
+                    dummy_ball_vel_x *= -3.5
+                    right_gadget = 0
+                    right_gadget_remaining -= 1
         elif right_gadget == 2:
             right_paddle_y = ball_y
             right_gadget = 0
             right_gadget_remaining -= 1
+
+    # Gadget ball cloning
     elif gadget_pair == 2:
         # print("Ball cloning")
+        # left paddle
         if left_gadget == 1:
-            pygame.draw.circle(
-                wn, WHITE, (left_paddle_x+10, left_paddle_y+10), 4)
-            # left paddle
+
             if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
                 if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
                     ball_x = left_paddle_x + paddle_width
@@ -206,10 +196,9 @@ while run:
                     left_gadget == 0
                     left_gadget_remaining -= 1
 
+        # right paddle
         if right_gadget == 1:
-            pygame.draw.circle(
-                wn, WHITE, (right_paddle_x+10, right_paddle_y+10), 4)
-            # right paddle
+
             if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
                 if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
                     ball_x = right_paddle_x
@@ -223,6 +212,14 @@ while run:
     # update ball position
     ball_x += ball_vel_x
     ball_y += ball_vel_y
+
+    if left_gadget == 1:
+        pygame.draw.circle(
+            wn, WHITE, (left_paddle_x+10, left_paddle_y+10), 4)
+
+    if right_gadget == 1:
+        pygame.draw.circle(
+            wn, WHITE, (right_paddle_x+10, right_paddle_y+10), 4)
 
     # dummy ball
     dummy_ball_x += dummy_ball_vel_x
