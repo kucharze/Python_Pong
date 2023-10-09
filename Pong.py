@@ -76,30 +76,42 @@ while run:
     if ball_y <= 0 + radius or ball_y >= Height - radius:
         ball_vel_y *= -1
 
+    # Dummy ball
+    if dummy_ball_y <= 0 + radius or dummy_ball_y >= Height - radius:
+        dummy_ball_vel_y *= -1
+
     if ball_x <= 0 + radius or ball_x >= Width - radius:
+        ball_x, ball_y = Width/2-radius, Height/2 - radius
+        dummy_ball_x, dummy_ball_y = Width/2-radius, Height/2 - radius
+
         dir = random.choice(direction)
         ang = random.choice(angle)
         # randomize ball direction
         if dir == 0:
             if ang == 0:
                 ball_vel_y, ball_vel_x = -0.5, 0.2
+                dummy_ball_vel_y, dummy_ball_vel_x = -0.5, 0.2
             if ang == 1:
                 ball_vel_y, ball_vel_x = -0.5, 0.2
+                dummy_ball_vel_y, dummy_ball_vel_x = -0.5, 0.2
             if ang == 2:
                 ball_vel_y, ball_vel_x = -0.2, 0.5
+                dummy_ball_vel_y, dummy_ball_vel_x = -0.2, 0.5
 
         if dir == 1:
             if ang == 0:
                 ball_vel_y, ball_vel_x = 0.5, 0.2
+                dummmy_ball_vel_y, dummy_ball_vel_x = 0.5, 0.2
             if ang == 1:
                 ball_vel_y, ball_vel_x = 0.5, 0.2
+                dummy_ball_vel_y, dummy_ball_vel_x = 0.5, 0.2
             if ang == 2:
                 ball_vel_y, ball_vel_x = 0.2, 0.5
+                dummy_ball_vel_y, dummy_ball_vel_x = 0.2, 0.5
 
         if ball_x >= Width - radius:
             ball_vel_x *= -1
         # ball_vel_y *= -1
-        ball_x, ball_y = Width/2-radius, Height/2 - radius
 
     # paddle's movement controls
     if right_paddle_y >= Height - paddle_height:
