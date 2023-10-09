@@ -162,12 +162,23 @@ while run:
     pygame.draw.rect(wn, RED, pygame.Rect(
         right_paddle_x, right_paddle_y, paddle_width, paddle_height))
 
+    # Gadgets
     if left_gadget == 1:
         pygame.draw.circle(wn, WHITE, (left_paddle_x+10, left_paddle_y+10), 4)
+
+    elif left_gadget == 2:
+        left_paddle_y = ball_y
+        left_gadget = 0
+        left_gadget_remaining -= 1
 
     if right_gadget == 1:
         pygame.draw.circle(
             wn, WHITE, (right_paddle_x+10, right_paddle_y+10), 4)
+
+    elif right_gadget == 2:
+        right_paddle_y = ball_y
+        right_gadget = 0
+        right_gadget_remaining -= 1
 
     # Update the display window
     pygame.display.update()
