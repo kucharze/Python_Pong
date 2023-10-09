@@ -218,6 +218,10 @@ while run:
     ball_x += ball_vel_x
     ball_y += ball_vel_y
 
+    # dummy ball
+    dummy_ball_x += dummy_ball_vel_x
+    dummy_ball_y += dummy_ball_vel_y
+
     # update paddle position
     right_paddle_y += right_paddle_vel
     left_paddle_y += left_paddle_vel
@@ -225,6 +229,9 @@ while run:
     # objects
     # ball
     pygame.draw.circle(wn, BLUE, (ball_x, ball_y), radius)
+
+    # dummy ball
+    pygame.draw.circle(wn, BLUE, (dummy_ball_x, dummy_ball_y), radius)
 
     # left_paddle
     pygame.draw.rect(wn, RED, pygame.Rect(
