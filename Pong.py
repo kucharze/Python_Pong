@@ -132,16 +132,20 @@ while run:
     if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
         if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
             ball_x = left_paddle_x + paddle_width
+            dummy_ball_x = left_paddle_x + paddle_width
             ball_vel_x *= -1
+            dummy_ball_vel_x *= -1
 
     # right paddle
     if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
         if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
             ball_x = right_paddle_x
+            dummy_ball_x = right_paddle_x
             ball_vel_x *= -1
+            dummy_ball_vel_x *= -1
 
     # gadgets in action
-        # left paddle
+    # left paddle
     if left_gadget == 1:
         if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
             if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
