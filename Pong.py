@@ -111,6 +111,7 @@ while run:
 
         if ball_x >= Width - radius:
             ball_vel_x *= -1
+            dummy_ball_vel_x *= -1
         # ball_vel_y *= -1
 
     # paddle's movement controls
