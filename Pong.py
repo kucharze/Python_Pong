@@ -27,6 +27,9 @@ radius = 15
 ball_x, ball_y = Width/2-radius, Height/2 - radius
 ball_vel_x, ball_vel_y = 0.2, 0.2
 
+dummy_ball_x, dummy_ball_y = Width/2-radius, Height/2 - radius
+dummy_ball_vel_x, dummy_ball_vel_y = 0.2, 0.2
+
 # paddle Dimensions
 paddle_width, paddle_height = 20, 120
 left_paddle_y = right_paddle_y = Height/2 - paddle_height/2
