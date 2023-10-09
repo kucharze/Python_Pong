@@ -3,6 +3,13 @@ import random
 
 pygame.init()
 
+gadget_pair = 1
+ch = int(input("Enter your choice for the gadget pair"))
+if ch == 1:
+    gadget_pair = 1
+elif ch == 2:
+    gadget_pair = 2
+
 # initials
 Width, Height = 1000, 600
 wn = pygame.display.set_mode((Width, Height))
