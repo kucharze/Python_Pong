@@ -50,6 +50,8 @@ while run:
                 right_paddle_vel = 0.6
             if i.key == pygame.K_RIGHT and right_gadget_remaining > 0:
                 right_gadget = 1
+            if i.key == pygame.K_LEFT and right_gadget_remaining > 0:
+                right_gadget = 2
 
             # left player
             if i.key == pygame.K_w:
@@ -58,6 +60,8 @@ while run:
                 left_paddle_vel = 0.6
             if i.key == pygame.K_d and left_gadget_remaining > 0:
                 left_gadget = 1
+            if i.key == pygame.K_a and left_gadget_remaining > 0:
+                left_gadget = 2
 
         if i.type == pygame.KEYUP:
             right_paddle_vel = 0
