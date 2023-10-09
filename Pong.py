@@ -229,7 +229,8 @@ while run:
                     ball_x = right_paddle_x
                     dummy_ball_x = right_paddle_x
                     ball_vel_x *= -1
-                    dummy_ball_vel_x *= -2
+                    dummy_ball_vel_x *= -1
+                    dummy_ball_vel_y *= -2
                     right_gadget == 0
                     right_gadget_remaining -= 1
 
