@@ -158,6 +158,7 @@ while run:
             if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
                 ball_x = left_paddle_x + paddle_width
                 ball_vel_x *= -3.5
+                dummy_ball_vel_x *= -3.5
                 left_gadget = 0
                 left_gadget_remaining -= 1
 
@@ -166,6 +167,7 @@ while run:
             if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
                 ball_x = right_paddle_x
                 ball_vel_x *= -3.5
+                dummy_ball_vel_x *= -3.5
                 right_gadget = 0
                 right_gadget_remaining -= 1
 
@@ -189,8 +191,10 @@ while run:
             right_gadget = 0
             right_gadget_remaining -= 1
     elif gadget_pair == 2:
-        print("Ball cloning")
+        # print("Ball cloning")
         if left_gadget == 1:
+            pygame.draw.circle(
+                wn, WHITE, (left_paddle_x+10, left_paddle_y+10), 4)
             # left paddle
             if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
                 if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
@@ -198,11 +202,13 @@ while run:
                     dummy_ball_x = left_paddle_x + paddle_width
                     ball_vel_x *= -1
                     dummy_ball_vel_x *= -1
-                    dummy_ball_vel_y *= -2
+                    dummy_ball_vel_y *= -1
                     left_gadget == 0
                     left_gadget_remaining -= 1
 
         if right_gadget == 1:
+            pygame.draw.circle(
+                wn, WHITE, (right_paddle_x+10, right_paddle_y+10), 4)
             # right paddle
             if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
                 if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
@@ -210,7 +216,7 @@ while run:
                     dummy_ball_x = right_paddle_x
                     ball_vel_x *= -1
                     dummy_ball_vel_x *= -1
-                    dummy_ball_vel_y *= -2
+                    dummy_ball_vel_y *= -1
                     right_gadget == 0
                     right_gadget_remaining -= 1
 
