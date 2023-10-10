@@ -138,6 +138,7 @@ while run:
     # left paddle
     if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
         if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
+           # if gadget_pair != 2 and left_gadget != 1:
             ball_x = left_paddle_x + paddle_width
             dummy_ball_x = left_paddle_x + paddle_width
             ball_vel_x *= -1
@@ -146,14 +147,15 @@ while run:
     # right paddle
     if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
         if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
+            # if gadget_pair != 2 and right_gadget != 1:
             ball_x = right_paddle_x
             dummy_ball_x = right_paddle_x
             ball_vel_x *= -1
             dummy_ball_vel_x *= -1
 
     # gadgets in action
-    # left paddle
     if gadget_pair == 1:
+        # left paddle
         if left_gadget == 1:
             if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
                 if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
@@ -167,6 +169,7 @@ while run:
             left_gadget = 0
             left_gadget_remaining -= 1
 
+        # right paddle
         if right_gadget == 1:
             if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
                 if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
@@ -185,7 +188,6 @@ while run:
         # print("Ball cloning")
         # left paddle
         if left_gadget == 1:
-
             if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
                 if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
                     ball_x = left_paddle_x + paddle_width
@@ -198,7 +200,6 @@ while run:
 
         # right paddle
         if right_gadget == 1:
-
             if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
                 if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
                     ball_x = right_paddle_x
